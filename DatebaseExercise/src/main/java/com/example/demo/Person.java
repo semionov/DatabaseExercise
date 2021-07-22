@@ -40,12 +40,12 @@ public class Person {
 	
 	//--------Constructor-------------
 	
-	public Person(String name, String type, int location, Expense expenses) {
+	public Person(String name, String surname, int age) {
 		super();
 		this.name = name;
-		this.surname = type;
-		this.age = location;
-		//this.expenses = expenses;
+		this.surname = surname;
+		this.age = age;
+		//this.expenses = expense;
 	}	
 			
 	public Person() {
