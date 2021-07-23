@@ -23,15 +23,15 @@ public class Person {
 	public String name;
 	public String surname; 
 	public int age; 
+
 	
 	@OneToMany(mappedBy = "", cascade = CascadeType.ALL)
-	
 	private List<Expense> expenses = new ArrayList<>();
 	
-	
-	
-	
-	
+	public void addExpense(Expense expense) {
+		this.getExpenses().add(expense);
+		expense.setPerson(this);
+	}
 	
 	//Defining relationship type: Many to One
 	//@ManyToOne 
@@ -45,7 +45,7 @@ public class Person {
 		this.name = name;
 		this.surname = surname;
 		this.age = age;
-		//this.expenses = expense;
+		//this.expense = expense;
 	}	
 			
 	public Person() {
@@ -53,43 +53,52 @@ public class Person {
 	
 		
 	//-----Getters and Setters----------
+
 	
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getType() {
+
+	public String getSurname() {
 		return surname;
 	}
-	public void setType(String type) {
-		this.surname = type;
+
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
-	public int getLocation() {
+
+	public int getAge() {
 		return age;
 	}
-	public void setLocation(int location) {
-		this.age = location;
+
+	public void setAge(int age) {
+		this.age = age;
 	}
-	/*public HashMap<String, Route> getRoutes() {
-		return routes;
+
+	public List<Expense> getExpenses() {
+		return expenses;
 	}
-	public void setRoutes(HashMap<String, Route> routes) {
-		this.routes = routes;
-	}*/
-	
-	//------ToString------------
+
+	public void setExpenses(List<Expense> expenses) {
+		this.expenses = expenses;
+	}
 	
 	@Override
 	public String toString() {
 		return "Route [id=" + id + ", name=" + name + ", type=" + surname + ", location=" + age + "]";
 	    }
+
 	}
 

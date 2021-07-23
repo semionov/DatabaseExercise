@@ -15,9 +15,14 @@ public class Expense {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 	private double quantity;
 	private double price;
 	
+	
+	public Expense() {
+	
+	}
 
 	public Expense(double quantity, double price) {
 		super();
@@ -32,6 +37,14 @@ public class Expense {
 	
 	
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public double getQuantity() {
 		return quantity;
 	}
@@ -50,4 +63,14 @@ public class Expense {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+	
+	
 }

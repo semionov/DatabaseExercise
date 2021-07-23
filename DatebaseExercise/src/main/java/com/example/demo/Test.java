@@ -4,6 +4,7 @@ import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 
 
@@ -13,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import ch.qos.logback.classic.Logger;
 */
-
+@Component
 public class Test implements CommandLineRunner {
 
 	
@@ -39,7 +40,16 @@ public class Test implements CommandLineRunner {
 		expenseRepository.save(gas);
 		
 		
+		  jose.addExpense(water); 
+		  //jose.addExpense(gas);
+		  
+		 pablo.addExpense(water);
+		  
+		  personRepository.save(jose); 
+		  
+		 personRepository.save(pablo);
+		 
 		
-		
+
 	}
 }
